@@ -2,225 +2,56 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>fatima-Testing Organization</title>
+		<title>aframe-world-fatima-Testing-Organization</title>
 		<script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
 		<script src="https://unpkg.com/@softeng-761-2025-team-10/aframe-inspector/dist/aframe-inspector.min.js"></script>
+		{{permissionScript}}
 	</head>
 	<body>
 		<a-scene>
-			<!-- Lighting - Gallery style -->
-			<a-light type="ambient" color="#FFFFFF" intensity="0.4"></a-light>
-			<a-light
-				type="directional"
-				position="5 10 5"
-				intensity="0.6"
-			></a-light>
-			<a-light
-				type="point"
-				position="0 3 0"
-				color="#FFFFEE"
-				intensity="0.5"
-			></a-light>
-
-			<!-- Gallery Walls -->
-			<!-- Back wall -->
+			<!-- User entities -->
+			      <a-light type="ambient" color="#FFFFFF" intensity="0.4"></a-light>
+      <a-light type="directional" position="5 10 5" intensity="0.6"></a-light>
+      <a-light type="point" position="0 3 0" color="#FFFFEE" intensity="0.5"></a-light>
+      <a-plane id="back-wall" position="0 2.5 -5" width="12" height="5" color="#F5F5F5" material="roughness: 0.9"></a-plane>
+      <a-plane id="left-wall" position="-6 2.5 0" rotation="0 90 0" width="10" height="5" color="#EEEEEE" material="roughness: 0.9"></a-plane>
+      <a-plane id="right-wall" position="6 2.5 0" rotation="0 -90 0" width="10" height="5" color="#EEEEEE" material="roughness: 0.9"></a-plane>
+      <a-plane id="floor" position="0 0 0" rotation="-90 0 0" width="12" height="10" color="#8B7355" material="roughness: 0.7; metalness: 0.1"></a-plane>
+      <a-plane id="ceiling" position="0 5 0" rotation="90 0 0" width="12" height="10" color="#FFFFFF" material="roughness: 0.8"></a-plane>
+      <a-entity id="frame1" position="-3 2.5 -4.9"></a-entity>
+      <a-plane width="1.8" height="1.8" color="#8B4513" material="roughness: 0.6"></a-plane>
+      <a-plane width="1.5" height="1.5" position="0 0 0.01" color="#FF4444" animation="property: material.color; from: #FF4444; to: #FF8888; loop: true; dur: 3000; dir: alternate; easing: easeInOutSine"></a-plane>
+      <a-entity id="frame2" position="0 2.5 -4.9"></a-entity>
+      <a-plane width="1.8" height="1.8" color="#8B4513" material="roughness: 0.6"></a-plane>
+      <a-plane width="1.5" height="1.5" position="0 0 0.01" color="#4444FF" animation="property: material.color; from: #4444FF; to: #44FFFF; loop: true; dur: 4000; dir: alternate; easing: easeInOutSine"></a-plane>
+      <a-entity id="frame3" position="3 2.5 -4.9"></a-entity>
+      <a-plane width="1.8" height="1.8" color="#8B4513" material="roughness: 0.6"></a-plane>
+      <a-plane width="1.5" height="1.5" position="0 0 0.01" color="#44FF44" animation="property: material.color; from: #44FF44; to: #88FF88; loop: true; dur: 3500; dir: alternate; easing: easeInOutSine"></a-plane>
+      <a-entity id="sculpture1" position="-3 0 -2"></a-entity>
+      <a-cylinder position="0 0.5 0" radius="0.4" height="1" color="#CCCCCC" material="metalness: 0.2; roughness: 0.8"></a-cylinder>
+      <a-box position="0 1.5 0" width="0.6" height="0.6" depth="0.6" color="#FFD700" animation="property: rotation; to: 0 360 360; loop: true; dur: 8000; easing: linear" material="metalness: 0.9; roughness: 0.1"></a-box>
+      <a-entity id="sculpture2" position="0 0 -1"></a-entity>
+      <a-cylinder position="0 0.5 0" radius="0.4" height="1" color="#CCCCCC" material="metalness: 0.2; roughness: 0.8"></a-cylinder>
+      <a-sphere position="0 1.8 0" radius="0.4" color="#FF69B4" animation="property: position; to: 0 2.2 0; loop: true; dir: alternate; dur: 2000; easing: easeInOutSine" material="metalness: 0.7; roughness: 0.3"></a-sphere>
+      <a-entity id="sculpture3" position="3 0 -2"></a-entity>
+      <a-cylinder position="0 0.5 0" radius="0.4" height="1" color="#CCCCCC" material="metalness: 0.2; roughness: 0.8"></a-cylinder>
+      <a-torus position="0 1.5 0" radius="0.4" radius-tubular="0.1" color="#00CED1" animation="property: rotation; to: 360 360 0; loop: true; dur: 10000; easing: linear" material="metalness: 0.8; roughness: 0.2"></a-torus>
+      <a-light type="spot" position="-3 4 -3" target="#frame1" intensity="0.8" angle="30"></a-light>
+      <a-light type="spot" position="0 4 -3" target="#frame2" intensity="0.8" angle="30"></a-light>
+      <a-light type="spot" position="3 4 -3" target="#frame3" intensity="0.8" angle="30"></a-light>
+      <a-entity id="chandelier" position="0 4.5 -2.5"></a-entity>
+      <a-sphere radius="0.3" color="#FFD700" material="metalness: 1; roughness: 0; emissive: #FFEEAA; emissiveIntensity: 0.5"></a-sphere>
+      <a-sky color="#DDDDDD"></a-sky>
+      <a-entity gltf-model="" position="-0.05077 2.16241 -3" rotation="0 0 0" scale="" id="A-ENTITY-10"></a-entity>
 			<a-plane
-				id="back-wall"
-				position="0 2.5 -5"
-				width="12"
-				height="5"
-				color="#F5F5F5"
-				material="roughness: 0.9"
-			></a-plane>
-
-			<!-- Left wall -->
-			<a-plane
-				id="left-wall"
-				position="-6 2.5 0"
-				rotation="0 90 0"
-				width="10"
-				height="5"
-				color="#EEEEEE"
-				material="roughness: 0.9"
-			></a-plane>
-
-			<!-- Right wall -->
-			<a-plane
-				id="right-wall"
-				position="6 2.5 0"
-				rotation="0 -90 0"
-				width="10"
-				height="5"
-				color="#EEEEEE"
-				material="roughness: 0.9"
-			></a-plane>
-
-			<!-- Floor -->
-			<a-plane
-				id="floor"
-				position="0 0 0"
+				id="ground"
+				position="0 0 -4"
 				rotation="-90 0 0"
-				width="12"
-				height="10"
-				color="#8B7355"
-				material="roughness: 0.7; metalness: 0.1"
+				width="4"
+				height="4"
+				color="#7BC8A4"
 			></a-plane>
-
-			<!-- Ceiling -->
-			<a-plane
-				id="ceiling"
-				position="0 5 0"
-				rotation="90 0 0"
-				width="12"
-				height="10"
-				color="#FFFFFF"
-				material="roughness: 0.8"
-			></a-plane>
-
-			<!-- Artwork Frames on Back Wall -->
-			<!-- Frame 1 - Abstract red -->
-			<a-entity id="frame1" position="-3 2.5 -4.9">
-				<a-plane
-					width="1.8"
-					height="1.8"
-					color="#8B4513"
-					material="roughness: 0.6"
-				></a-plane>
-				<a-plane
-					width="1.5"
-					height="1.5"
-					position="0 0 0.01"
-					color="#FF4444"
-					animation="property: material.color; from: #FF4444; to: #FF8888; loop: true; dur: 3000; dir: alternate; easing: easeInOutSine"
-				></a-plane>
-			</a-entity>
-
-			<!-- Frame 2 - Gradient blue -->
-			<a-entity id="frame2" position="0 2.5 -4.9">
-				<a-plane
-					width="1.8"
-					height="1.8"
-					color="#8B4513"
-					material="roughness: 0.6"
-				></a-plane>
-				<a-plane
-					width="1.5"
-					height="1.5"
-					position="0 0 0.01"
-					color="#4444FF"
-					animation="property: material.color; from: #4444FF; to: #44FFFF; loop: true; dur: 4000; dir: alternate; easing: easeInOutSine"
-				></a-plane>
-			</a-entity>
-
-			<!-- Frame 3 - Green geometric -->
-			<a-entity id="frame3" position="3 2.5 -4.9">
-				<a-plane
-					width="1.8"
-					height="1.8"
-					color="#8B4513"
-					material="roughness: 0.6"
-				></a-plane>
-				<a-plane
-					width="1.5"
-					height="1.5"
-					position="0 0 0.01"
-					color="#44FF44"
-					animation="property: material.color; from: #44FF44; to: #88FF88; loop: true; dur: 3500; dir: alternate; easing: easeInOutSine"
-				></a-plane>
-			</a-entity>
-
-			<!-- Sculptures on pedestals -->
-			<!-- Sculpture 1 - Rotating cube -->
-			<a-entity id="sculpture1" position="-3 0 -2">
-				<a-cylinder
-					position="0 0.5 0"
-					radius="0.4"
-					height="1"
-					color="#CCCCCC"
-					material="metalness: 0.2; roughness: 0.8"
-				></a-cylinder>
-				<a-box
-					position="0 1.5 0"
-					width="0.6"
-					height="0.6"
-					depth="0.6"
-					color="#FFD700"
-					material="metalness: 0.9; roughness: 0.1"
-					animation="property: rotation; to: 0 360 360; loop: true; dur: 8000; easing: linear"
-				></a-box>
-			</a-entity>
-
-			<!-- Sculpture 2 - Floating sphere -->
-			<a-entity id="sculpture2" position="0 0 -1">
-				<a-cylinder
-					position="0 0.5 0"
-					radius="0.4"
-					height="1"
-					color="#CCCCCC"
-					material="metalness: 0.2; roughness: 0.8"
-				></a-cylinder>
-				<a-sphere
-					position="0 1.8 0"
-					radius="0.4"
-					color="#FF69B4"
-					material="metalness: 0.7; roughness: 0.3"
-					animation="property: position; to: 0 2.2 0; loop: true; dir: alternate; dur: 2000; easing: easeInOutSine"
-				></a-sphere>
-			</a-entity>
-
-			<!-- Sculpture 3 - Torus -->
-			<a-entity id="sculpture3" position="3 0 -2">
-				<a-cylinder
-					position="0 0.5 0"
-					radius="0.4"
-					height="1"
-					color="#CCCCCC"
-					material="metalness: 0.2; roughness: 0.8"
-				></a-cylinder>
-				<a-torus
-					position="0 1.5 0"
-					radius="0.4"
-					radius-tubular="0.1"
-					color="#00CED1"
-					material="metalness: 0.8; roughness: 0.2"
-					animation="property: rotation; to: 360 360 0; loop: true; dur: 10000; easing: linear"
-				></a-torus>
-			</a-entity>
-
-			<!-- Spotlights on artwork -->
-			<a-light
-				type="spot"
-				position="-3 4 -3"
-				target="#frame1"
-				intensity="0.8"
-				angle="30"
-			></a-light>
-			<a-light
-				type="spot"
-				position="0 4 -3"
-				target="#frame2"
-				intensity="0.8"
-				angle="30"
-			></a-light>
-			<a-light
-				type="spot"
-				position="3 4 -3"
-				target="#frame3"
-				intensity="0.8"
-				angle="30"
-			></a-light>
-
-			<!-- Decorative elements -->
-			<a-entity id="chandelier" position="0 4.5 -2.5">
-				<a-sphere
-					radius="0.3"
-					color="#FFD700"
-					material="metalness: 1; roughness: 0; emissive: #FFEEAA; emissiveIntensity: 0.5"
-				></a-sphere>
-			</a-entity>
-
-			<!-- Sky -->
-			<a-sky color="#DDDDDD"></a-sky>
+			<a-sky id="sky" color="#ECECEC"></a-sky>
 		</a-scene>
 	</body>
 </html>
